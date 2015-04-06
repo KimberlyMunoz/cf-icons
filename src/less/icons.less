@@ -21,6 +21,16 @@
         - "@cf-icon-ie7-support: true;"
       notes:
         - "More on IE7 support can be found in the 'IE7 Support' section."
+    - name: Icon border color
+      codenotes:
+        - "@cf-border-color: #eee;";
+      notes:
+        - "Used in helpers.less"
+    - name: Helpers and mixins
+      codenotes:
+        - "@import 'mixins.less';"
+        - "@import 'helpers.less';"
+      notes: "These are additional helper classes for rotating, resizing or modifying icons"
   tags:
     - cf-icons
 */
@@ -28,7 +38,10 @@
 @cf-icon-prefix:                cf-icon;
 @cf-icon-path:                  '../fonts';
 @cf-icon-ie7-support:           true;
+@cf-border-color:               #eee;
 
+@import 'mixins.less';
+@import 'helpers.less';
 
 /* topdoc
   name: IE7 Support
