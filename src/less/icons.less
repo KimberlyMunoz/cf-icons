@@ -40,8 +40,8 @@
 @cf-icon-ie7-support:           true;
 @cf-border-color:               #eee;
 
-@import 'mixins.less';
-@import 'helpers.less';
+@import '_mixins.less';
+@import '_helpers.less';
 
 /* topdoc
   name: IE7 Support
@@ -111,6 +111,223 @@
   line-height: 1;
   -webkit-font-smoothing: antialiased;
 }
+
+// These mixins for fonts are used for add icons in
+// Less files
+
+
+// Navigation icons
+
+@cf-var-left:                       "\e000";
+@cf-var-left-round:                 "\e001";
+@cf-var-right:                      "\e002";
+@cf-var-right-round:                "\e003";
+@cf-var-up:                         "\e004";
+@cf-var-up-round:                   "\e005";
+@cf-var-down:                       "\e006";
+@cf-var-down-round:                 "\e007";
+@cf-var-arrow-left:                 "\e008";
+@cf-var-arrow-left-round:           "\e009";
+@cf-var-arrow-right:                "\e010";
+@cf-var-arrow-right-round:          "\e011";
+@cf-var-arrow-up:                   "\e012";
+@cf-var-arrow-up-round:             "\e013";
+@cf-var-arrow-down:                 "\e014";
+@cf-var-arrow-down-round:           "\e015";
+
+// Status icons
+
+@cf-var-approved:                   "\e100";
+@cf-var-approved-round:             "\e101";
+@cf-var-error:                      "\e102";
+@cf-var-error-round:                "\e103";
+@cf-var-help:                       "\e104";
+@cf-var-help-round:                 "\e105";
+@cf-var-delete:                     "\e106";
+@cf-var-delete-round:               "\e107";
+@cf-var-plus:                       "\e108";
+@cf-var-plus-round:                 "\e109";
+@cf-var-minus:                      "\e110";
+@cf-var-minus-round:                "\e111";
+@cf-var-update:                     "\e112";
+@cf-var-update-round:               "\e113";
+
+// Social icons
+
+@cf-var-youtube:                    "\e200";
+@cf-var-youtube-square:             "\e201";
+@cf-var-linkedin:                   "\e202";
+@cf-var-linkedin-square:            "\e203";
+@cf-var-facebook:                   "\e204";
+@cf-var-facebook-square:            "\e205";
+@cf-var-flickr:                     "\e206";
+@cf-var-flickr-square:              "\e207";
+@cf-var-twitter:                    "\e208";
+@cf-var-twitter-square:             "\e209";
+@cf-var-github:                     "\e210";
+@cf-var-github-square:              "\e211";
+@cf-var-email-social:               "\e212";
+@cf-var-email-social-square:        "\e213";
+
+// Communication icons
+
+@cf-var-web:                        "\e300";
+@cf-var-web-round:                  "\e301";
+@cf-var-email:                      "\e302";
+@cf-var-email-round:                "\e303";
+@cf-var-mail:                       "\e304";
+@cf-var-mail-round:                 "\e305";
+@cf-var-phone:                      "\e306";
+@cf-var-phone-round:                "\e307";
+@cf-var-technology:                 "\e308";
+@cf-var-technology-round:           "\e309";
+@cf-var-fax:                        "\e310";
+@cf-var-fax-round:                  "\e311";
+
+// Document icons
+
+@cf-var-document:                   "\e400";
+@cf-var-document-round:             "\e401";
+@cf-var-pdf:                        "\e402";
+@cf-var-pdf-round:                  "\e403";
+@cf-var-upload:                     "\e404";
+@cf-var-upload-round:               "\e405";
+@cf-var-download:                   "\e406";
+@cf-var-download-round:             "\e407";
+@cf-var-copy:                       "\e408";
+@cf-var-copy-round:                 "\e409";
+@cf-var-edit:                       "\e410";
+@cf-var-edit-round:                 "\e411";
+@cf-var-attach:                     "\e412";
+@cf-var-attach-round:               "\e413";
+@cf-var-print:                      "\e414";
+@cf-var-print-round:                "\e415";
+@cf-var-save:                       "\e416";
+@cf-var-save-round:                 "\e417";
+@cf-var-appendix:                   "\e418";
+@cf-var-appendix-round:             "\e419";
+@cf-var-supplement:                 "\e420";
+@cf-var-supplement-round:           "\e421";
+@cf-var-rss:                        "\e422";
+@cf-var-rss-round:                  "\e423";
+
+// Financial products
+
+@cf-var-bank-account:               "\e500";
+@cf-var-bank-account-round:         "\e501";
+@cf-var-credit-card:                "\e502";
+@cf-var-credit-card-round:          "\e503";
+@cf-var-loan:                       "\e504";
+@cf-var-loan-round:                 "\e505";
+@cf-var-money-transfer:             "\e506";
+@cf-var-money-transfer-round:       "\e507";
+@cf-var-mortgage:                   "\e508";
+@cf-var-mortgage-round:             "\e509";
+@cf-var-debt-collection:            "\e510";
+@cf-var-debt-collection-round:      "\e511";
+@cf-var-credit-report:              "\e512";
+@cf-var-credit-report-round:        "\e513";
+@cf-var-money:                      "\e514";
+@cf-var-money-round:                "\e515";
+@cf-var-quick-cash:                 "\e516";
+@cf-var-quick-cash-round:           "\e517";
+@cf-var-contract:                   "\e518";
+@cf-var-contract-round:             "\e519";
+@cf-var-complaint:                  "\e520";
+@cf-var-complaint-round:            "\e521";
+@cf-var-getting-credit-card:        "\e522";
+@cf-var-getting-credit-card-round:  "\e523";
+@cf-var-buying-car:                 "\e524";
+@cf-var-buying-car-round:           "\e525";
+@cf-var-paying-college:             "\e526";
+@cf-var-paying-college-round:       "\e527";
+@cf-var-owning-home:                "\e528";
+@cf-var-owning-home-round:          "\e529";
+@cf-var-debt:                       "\e530";
+@cf-var-debt-round:                 "\e531";
+@cf-var-building-credit:            "\e532";
+@cf-var-building-credit-round:      "\e533";
+@cf-var-prepaid-cards:              "\e534";
+@cf-var-prepaid-cards-round:        "\e535";
+@cf-var-payday-loan:                "\e536";
+@cf-var-payday-loan-round:          "\e537";
+@cf-var-retirement:                 "\e538";
+@cf-var-retirement-round:           "\e539";
+
+// Web icons
+
+@cf-var-user:                       "\e600";
+@cf-var-user-round:                 "\e601";
+@cf-var-wifi:                       "\e602";
+@cf-var-wifi-round:                 "\e603";
+@cf-var-search:                     "\e604";
+@cf-var-search-round:               "\e605";
+@cf-var-share:                      "\e606";
+@cf-var-share-round:                "\e607";
+@cf-var-link:                       "\e608";
+@cf-var-link-round:                 "\e609";
+@cf-var-external-link:              "\e610";
+@cf-var-external-link-round:        "\e611";
+@cf-var-audio-mute:                 "\e612";
+@cf-var-audio-mute-round:           "\e616";
+@cf-var-audio-low:                  "\e613";
+@cf-var-audio-low-round:            "\e617";
+@cf-var-audio-medium:               "\e614";
+@cf-var-audio-medium-round:         "\e618";
+@cf-var-audio-max:                  "\e615";
+@cf-var-audio-max-round:            "\e619";
+@cf-var-favorite:                   "\e620";
+@cf-var-favorite-round:             "\e621";
+@cf-var-unfavorite:                 "\e622";
+@cf-var-unfavorite-round:           "\e623";
+@cf-var-bookmark:                   "\e624";
+@cf-var-bookmark-round:             "\e625";
+@cf-var-unbookmark:                 "\e626";
+@cf-var-unbookmark-round:           "\e627";
+@cf-var-settings:                   "\e628";
+@cf-var-settings-round:             "\e629";
+@cf-var-menu:                       "\e630";
+@cf-var-menu-round:                 "\e631";
+@cf-var-lock:                       "\e632";
+@cf-var-lock-round:                 "\e633";
+@cf-var-unlock:                     "\e634";
+@cf-var-unlock-round:               "\e635";
+@cf-var-clock:                      "\e636";
+@cf-var-clock-round:                "\e637";
+@cf-var-chart:                      "\e638";
+@cf-var-chart-round:                "\e639";
+@cf-var-play:                       "\e640";
+@cf-var-play-round:                 "\e641";
+@cf-var-history:                    "\e642";
+@cf-var-history-round:              "\e643";
+@cf-var-table-of-contents:          "\e644";
+@cf-var-table-of-contents-round:    "\e645";
+@cf-var-newspaper:                  "\e700";
+@cf-var-newspaper-round:            "\e701";
+@cf-var-microphone:                 "\e702";
+@cf-var-microphone-round:           "\e703";
+@cf-var-bullhorn:                   "\e704";
+@cf-var-bullhorn-round:             "\e705";
+@cf-var-double-quote:               "\e708";
+@cf-var-double-quote-round:         "\e709";
+@cf-var-speech-bubble:              "\e710";
+@cf-var-speech-bubble-round:        "\e711";
+@cf-var-information:                "\e712";
+@cf-var-information-round:          "\e713";
+@cf-var-lightbulb:                  "\e714";
+@cf-var-lightbulb-round:            "\e715";
+@cf-var-dialogue:                   "\e716";
+@cf-var-dialogue-round:             "\e717";
+@cf-var-date:                       "\e718";
+@cf-var-date-round:                 "\e719";
+@cf-var-closing-quote:              "\e720";
+@cf-var-closing-quote-round:        "\e721";
+@cf-var-livestream:                 "\e722";
+@cf-var-livestream-round:           "\e723";
+@cf-var-parents:                    "\e724";
+@cf-var-parents-round:              "\e725";
+@cf-var-servicemembers:             "\e726";
+@cf-var-servicemembers-round:    "\e727";
 
 
 /* topdoc
@@ -557,6 +774,10 @@
         markup: |
           <span class="cf-icon cf-icon-upload"></span>
           <span class="cf-icon cf-icon-upload-round"></span>
+      - name: download
+        markup: |
+          <span class="cf-icon cf-icon-download"></span>
+          <span class="cf-icon cf-icon-download-round"></span>
       - name: copy
         markup: |
           <span class="cf-icon cf-icon-copy"></span>
