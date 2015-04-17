@@ -73,13 +73,13 @@
   -webkit-font-smoothing: antialiased;
 }
 /* topdoc
-  name: Icon Variables
+  name: Icon character variables
   family: cf-icons
   patterns:
-    - name: Less Variables for icons
+    - name: Less variables for icons
       codenotes:
-        - "@cf-var-left:                       '\e000';"
-        - "@cf-var-left-round:                 '\e001';"
+        - "@cf-icon-left:                       '\e000';"
+        - "@cf-icon-left-round:                 '\e001';"
       notes:
         - "These variables for fonts are used for adding icons in
           Less files."
