@@ -23,6 +23,129 @@
           <h1 class="docs-title"><span class="docs-icon">&lt;/&gt;</span> cf-icons docs
           </h1><a href="https://github.com/cfpb/cf-icons" class="docs-repo">view the repository</a>
         </div>
+        <div id="less-variables" class="docs-component">
+          <h2 class="docs-component_header"><span>Less variables</span></h2>
+          <div class="docs-component_intro">
+            <ul class="docs-notes">
+              <li>These variables can be overriden in your project's Less file.</li>
+            </ul>
+          </div>
+          <div class="docs-patterns">
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">CSS prefix</h3>
+              <footer class="docs-pattern_footer">
+                <ul class="docs-codenotes">
+                  <li>
+                    <pre class="docs-code"><code>@cf-icon-prefix: cf-icon;</code></pre>
+                  </li>
+                </ul>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">Path to icon font files</h3>
+              <footer class="docs-pattern_footer">
+                <ul class="docs-codenotes">
+                  <li>
+                    <pre class="docs-code"><code>@cf-icon-path: '../fonts';</code></pre>
+                  </li>
+                </ul>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">Toggle IE7 support</h3>
+              <footer class="docs-pattern_footer">
+                <ul class="docs-codenotes">
+                  <li>
+                    <pre class="docs-code"><code>@cf-icon-ie7-support: true;</code></pre>
+                  </li>
+                </ul>
+                <ul class="docs-notes">
+                  <li>More on IE7 support can be found in the 'IE7 Support' section.</li>
+                </ul>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">Icon border color</h3>
+              <footer class="docs-pattern_footer">
+                <ul class="docs-codenotes">
+                  <li>
+                    <pre class="docs-code"><code>@cf-border-color: #eee;</code></pre>
+                  </li>
+                </ul>
+                <ul class="docs-notes">
+                  <li>Used in .cf-icon__border</li>
+                </ul>
+              </footer>
+            </div>
+          </div>
+        </div>
+        <div id="ie7-support" class="docs-component">
+          <h2 class="docs-component_header"><span>IE7 Support</span></h2>
+          <div class="docs-component_intro">
+            <ul class="docs-notes">
+              <li>IE7 support is added by using dynamic properties (CSS expressions).</li>
+              <li>To turn off IE7 support simply set @cf-icon-ie7-support to false.</li>
+            </ul>
+          </div>
+        </div>
+        <div id="the-basics" class="docs-component">
+          <h2 class="docs-component_header"><span>The basics</span></h2>
+          <div class="docs-patterns">
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">@font-face declaration</h3>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">Base icon class</h3>
+              <footer class="docs-pattern_footer">
+                <ul class="docs-notes">
+                  <li>The cf-icon-prefix class applies all shared icon styles including the font family.</li>
+                  <li>All icons must use two classes, one for this base class and another to set the font character. For example: &lt;span class='cf-icon cf-icon-left'&gt;&lt;/span&gt;.</li>
+                  <li>Please use the span element instead of the i element. This avoids font family cascading conflicts when using an italic webfont on i elements and then another font for the icons. Note that this issue only pops up in older versions of Internet Explorer.</li>
+                </ul>
+              </footer>
+            </div>
+          </div>
+          <div class="docs-css">
+            <pre class="docs-code"><code data-language="css">@font-face {
+  font-family: 'CFPB Minicons';
+  src: url('../fonts/cf-icons.eot');
+  src: url('../fonts/cf-icons.eot?#iefix') format('embedded-opentype'), url('../fonts/cf-icons.woff') format('woff'), url('../fonts/cf-icons.ttf') format('truetype'), url('../fonts/cf-icons.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+.cf-icon,
+.cf-icon {
+  font-family: 'CFPB Minicons';
+  display: inline-block;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+}</code></pre>
+          </div>
+        </div>
+        <div id="icon-variables" class="docs-component">
+          <h2 class="docs-component_header"><span>Icon Variables</span></h2>
+          <div class="docs-patterns">
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">Less Variables for icons</h3>
+              <footer class="docs-pattern_footer">
+                <ul class="docs-codenotes">
+                  <li>
+                    <pre class="docs-code"><code>@cf-var-left:                       '000';</code></pre>
+                  </li>
+                  <li>
+                    <pre class="docs-code"><code>@cf-var-left-round:                 '001';</code></pre>
+                  </li>
+                </ul>
+                <ul class="docs-notes">
+                  <li>These variables for fonts are used for adding icons in Less files.</li>
+                  <li>See the less file for the full list.</li>
+                </ul>
+              </footer>
+            </div>
+          </div>
+        </div>
         <div id="helper-classes-for-icon-sizes" class="docs-component">
           <h2 class="docs-component_header"><span>Helper classes for icon sizes</span></h2>
           <div class="docs-patterns">
@@ -117,37 +240,77 @@
 }</code></pre>
           </div>
         </div>
+        <div id="mixin-classes" class="docs-component">
+          <h2 class="docs-component_header"><span>Mixin classes</span></h2>
+          <div class="docs-patterns">
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">Icon rotation mixin</h3>
+              <footer class="docs-pattern_footer">
+                <ul class="docs-codenotes">
+                  <li>
+                    <pre class="docs-code"><code>.@cf-icon__rotate-90  { .cf-icon__rotate(90deg, 1);  }</code></pre>
+                  </li>
+                </ul>
+                <ul class="docs-notes">
+                  <li>First variable is @degrees.</li>
+                  <li>Second variable is @rotation</li>
+                </ul>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">Icon flip mixin</h3>
+              <footer class="docs-pattern_footer">
+                <ul class="docs-codenotes">
+                  <li>
+                    <pre class="docs-code"><code>.@{cf-icon-prefix}__flip-horizontal { .cf-icon__flip(-1, 1, 0); }</code></pre>
+                  </li>
+                  <li>
+                    <pre class="docs-code"><code>.@{cf-icon-prefix}__flip-vertical   { .cf-icon__flip(1, -1, 2); }</code></pre>
+                  </li>
+                </ul>
+                <ul class="docs-notes">
+                  <li>First variable is for number of horizontal flips</li>
+                  <li>Second variable is for number of vertical flips</li>
+                  <li>Third variable is for rotation</li>
+                </ul>
+              </footer>
+            </div>
+          </div>
+        </div>
         <div id="helper-classes-for-modified-icons" class="docs-component">
           <h2 class="docs-component_header"><span>Helper classes for modified icons</span></h2>
           <div class="docs-patterns">
             <div class="docs-pattern">
               <h3 class="docs-pattern_header">Bordered icons</h3>
               <section class="docs-pattern_pattern">
-<span class="cf-icon cf-icon-money cf-icon__border"></span>
+<span class="cf-icon cf-icon-update cf-icon__border"></span>
 
               </section>
               <footer class="docs-pattern_footer">
-                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-money cf-icon__border&quot;&gt;&lt;/span&gt;</code></pre>
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-update cf-icon__border&quot;&gt;&lt;/span&gt;</code></pre>
                 <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
-                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/docs/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-money cf-icon__border\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/docs/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-update cf-icon__border\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
                   <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
                 </form>
+                <ul class="docs-notes">
+                  <li>Border color set by @cf-border-color</li>
+                </ul>
               </footer>
             </div>
             <div class="docs-pattern">
               <h3 class="docs-pattern_header">Rotated icons</h3>
               <section class="docs-pattern_pattern">
-<span class="cf-icon cf-icon-money cf-icon__rotate-90"></span>
-<span class="cf-icon cf-icon-money cf-icon__rotate-180"></span>
-<span class="cf-icon cf-icon-money cf-icon__rotate-270"></span>
+<span class="cf-icon cf-icon-update cf-icon__rotate-90"></span>
+<span class="cf-icon cf-icon-update cf-icon__rotate-180"></span>
+<span class="cf-icon cf-icon-update cf-icon__rotate-270"></span>
 
               </section>
               <footer class="docs-pattern_footer">
-                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-money cf-icon__rotate-90&quot;&gt;&lt;/span&gt;
-&lt;span class=&quot;cf-icon cf-icon-money cf-icon__rotate-180&quot;&gt;&lt;/span&gt;
-&lt;span class=&quot;cf-icon cf-icon-money cf-icon__rotate-270&quot;&gt;&lt;/span&gt;</code></pre>
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-update cf-icon__rotate-90&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cf-icon cf-icon-update cf-icon__rotate-180&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cf-icon cf-icon-update cf-icon__rotate-270&quot;&gt;&lt;/span&gt;</code></pre>
                 <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
-                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/docs/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-money cf-icon__rotate-90\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-money cf-icon__rotate-180\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-money cf-icon__rotate-270\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/docs/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-update cf-icon__rotate-90\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-update cf-icon__rotate-180\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-update cf-icon__rotate-270\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
                   <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
                 </form>
               </footer>
@@ -155,15 +318,15 @@
             <div class="docs-pattern">
               <h3 class="docs-pattern_header">Flipped icons</h3>
               <section class="docs-pattern_pattern">
-<span class="cf-icon cf-icon-money cf-icon__flip-horizontal"></span>
-<span class="cf-icon cf-icon-money cf-icon__flip-vertical"></span>
+<span class="cf-icon cf-icon-update cf-icon__flip-horizontal"></span>
+<span class="cf-icon cf-icon-update cf-icon__flip-vertical"></span>
 
               </section>
               <footer class="docs-pattern_footer">
-                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-money cf-icon__flip-horizontal&quot;&gt;&lt;/span&gt;
-&lt;span class=&quot;cf-icon cf-icon-money cf-icon__flip-vertical&quot;&gt;&lt;/span&gt;</code></pre>
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-update cf-icon__flip-horizontal&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cf-icon cf-icon-update cf-icon__flip-vertical&quot;&gt;&lt;/span&gt;</code></pre>
                 <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
-                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/docs/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-money cf-icon__flip-horizontal\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-money cf-icon__flip-vertical\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/docs/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-update cf-icon__flip-horizontal\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-update cf-icon__flip-vertical\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
                   <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
                 </form>
               </footer>
@@ -221,13 +384,13 @@
             <div class="docs-pattern">
               <h3 class="docs-pattern_header">Spinning icons</h3>
               <section class="docs-pattern_pattern">
-<span class="cf-icon cf-icon-money cf-icon__spin"></span>
+<span class="cf-icon cf-icon-update cf-icon__spin"></span>
 
               </section>
               <footer class="docs-pattern_footer">
-                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-money cf-icon__spin&quot;&gt;&lt;/span&gt;</code></pre>
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-update cf-icon__spin&quot;&gt;&lt;/span&gt;</code></pre>
                 <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
-                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/docs/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-money cf-icon__spin\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/docs/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-update cf-icon__spin\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
                   <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
                 </form>
               </footer>
@@ -235,13 +398,13 @@
             <div class="docs-pattern">
               <h3 class="docs-pattern_header">Pulsing icons</h3>
               <section class="docs-pattern_pattern">
-<span class="cf-icon cf-icon-money cf-icon__pulse"></span>
+<span class="cf-icon cf-icon-update cf-icon__pulse"></span>
 
               </section>
               <footer class="docs-pattern_footer">
-                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-money cf-icon__pulse&quot;&gt;&lt;/span&gt;</code></pre>
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-update cf-icon__pulse&quot;&gt;&lt;/span&gt;</code></pre>
                 <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
-                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/docs/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-money cf-icon__pulse\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/docs/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-update cf-icon__pulse\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
                   <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
                 </form>
               </footer>
@@ -249,15 +412,15 @@
             <div class="docs-pattern">
               <h3 class="docs-pattern_header">Flipped icons</h3>
               <section class="docs-pattern_pattern">
-<span class="cf-icon cf-icon-money cf-icon__flip-horizontal"></span>
-<span class="cf-icon cf-icon-money cf-icon__flip-vertical"></span>
+<span class="cf-icon cf-icon-phone cf-icon__flip-horizontal"></span>
+<span class="cf-icon cf-icon-phone cf-icon__flip-vertical"></span>
 
               </section>
               <footer class="docs-pattern_footer">
-                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-money cf-icon__flip-horizontal&quot;&gt;&lt;/span&gt;
-&lt;span class=&quot;cf-icon cf-icon-money cf-icon__flip-vertical&quot;&gt;&lt;/span&gt;</code></pre>
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-phone cf-icon__flip-horizontal&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cf-icon cf-icon-phone cf-icon__flip-vertical&quot;&gt;&lt;/span&gt;</code></pre>
                 <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
-                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/docs/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-money cf-icon__flip-horizontal\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-money cf-icon__flip-vertical\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/docs/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-phone cf-icon__flip-horizontal\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-phone cf-icon__flip-vertical\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
                   <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
                 </form>
               </footer>
@@ -293,98 +456,6 @@
     -ms-transform: rotate(359deg);
     transform: rotate(359deg);
   }
-}
-/* ==========================================================================
-   Capital Framework
-   Icons
-   ========================================================================== */</code></pre>
-          </div>
-        </div>
-        <div id="less-variables" class="docs-component">
-          <h2 class="docs-component_header"><span>Less variables</span></h2>
-          <div class="docs-component_intro">
-            <ul class="docs-notes">
-              <li>These variables can be overriden in your project's Less file.</li>
-            </ul>
-          </div>
-          <div class="docs-patterns">
-            <div class="docs-pattern">
-              <h3 class="docs-pattern_header">CSS prefix</h3>
-              <footer class="docs-pattern_footer">
-                <ul class="docs-codenotes">
-                  <li>
-                    <pre class="docs-code"><code>@cf-icon-prefix: cf-icon;</code></pre>
-                  </li>
-                </ul>
-              </footer>
-            </div>
-            <div class="docs-pattern">
-              <h3 class="docs-pattern_header">Path to icon font files</h3>
-              <footer class="docs-pattern_footer">
-                <ul class="docs-codenotes">
-                  <li>
-                    <pre class="docs-code"><code>@cf-icon-path: '../fonts';</code></pre>
-                  </li>
-                </ul>
-              </footer>
-            </div>
-            <div class="docs-pattern">
-              <h3 class="docs-pattern_header">Toggle IE7 support</h3>
-              <footer class="docs-pattern_footer">
-                <ul class="docs-codenotes">
-                  <li>
-                    <pre class="docs-code"><code>@cf-icon-ie7-support: true;</code></pre>
-                  </li>
-                </ul>
-                <ul class="docs-notes">
-                  <li>More on IE7 support can be found in the 'IE7 Support' section.</li>
-                </ul>
-              </footer>
-            </div>
-          </div>
-        </div>
-        <div id="ie7-support" class="docs-component">
-          <h2 class="docs-component_header"><span>IE7 Support</span></h2>
-          <div class="docs-component_intro">
-            <ul class="docs-notes">
-              <li>IE7 support is added by using dynamic properties (CSS expressions).</li>
-              <li>To turn off IE7 support simply set @cf-icon-ie7-support to false.</li>
-            </ul>
-          </div>
-        </div>
-        <div id="the-basics" class="docs-component">
-          <h2 class="docs-component_header"><span>The basics</span></h2>
-          <div class="docs-patterns">
-            <div class="docs-pattern">
-              <h3 class="docs-pattern_header">@font-face declaration</h3>
-            </div>
-            <div class="docs-pattern">
-              <h3 class="docs-pattern_header">Base icon class</h3>
-              <footer class="docs-pattern_footer">
-                <ul class="docs-notes">
-                  <li>The cf-icon-prefix class applies all shared icon styles including the font family.</li>
-                  <li>All icons must use two classes, one for this base class and another to set the font character. For example: &lt;span class='cf-icon cf-icon-left'&gt;&lt;/span&gt;.</li>
-                  <li>Please use the span element instead of the i element. This avoids font family cascading conflicts when using an italic webfont on i elements and then another font for the icons. Note that this issue only pops up in older versions of Internet Explorer.</li>
-                </ul>
-              </footer>
-            </div>
-          </div>
-          <div class="docs-css">
-            <pre class="docs-code"><code data-language="css">@font-face {
-  font-family: 'CFPB Minicons';
-  src: url('../fonts/cf-icons.eot');
-  src: url('../fonts/cf-icons.eot?#iefix') format('embedded-opentype'), url('../fonts/cf-icons.woff') format('woff'), url('../fonts/cf-icons.ttf') format('truetype'), url('../fonts/cf-icons.svg') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-.cf-icon,
-.cf-icon {
-  font-family: 'CFPB Minicons';
-  display: inline-block;
-  font-style: normal;
-  font-weight: normal;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
 }</code></pre>
           </div>
         </div>
@@ -1247,6 +1318,22 @@
 &lt;span class=&quot;cf-icon cf-icon-upload-round&quot;&gt;&lt;/span&gt;</code></pre>
                 <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
                   <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/docs/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-upload\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-upload-round\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">download</h3>
+              <section class="docs-pattern_pattern">
+<span class="cf-icon cf-icon-download"></span>
+<span class="cf-icon cf-icon-download-round"></span>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;span class=&quot;cf-icon cf-icon-download&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cf-icon cf-icon-download-round&quot;&gt;&lt;/span&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-icons/docs/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;span class=\&amp;quot;cf-icon cf-icon-download\&amp;quot;&gt;&lt;/span&gt;\n&lt;span class=\&amp;quot;cf-icon cf-icon-download-round\&amp;quot;&gt;&lt;/span&gt;\n&amp;quot;}">
                   <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
                 </form>
               </footer>
